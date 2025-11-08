@@ -4,77 +4,82 @@ using Newtonsoft.Json;
 
 namespace APIVerve
 {
-public class rua
-{
-    [JsonProperty("domain")]
-    public string domain { get; set; }
+    /// <summary>
+    /// Rua data
+    /// </summary>
+    public class Rua
+    {
+        [JsonProperty("domain")]
+        public string Domain { get; set; }
 
-    [JsonProperty("email")]
-    public string email { get; set; }
+        [JsonProperty("email")]
+        public string Email { get; set; }
 
-    [JsonProperty("valid")]
-    public bool valid { get; set; }
+        [JsonProperty("valid")]
+        public bool Valid { get; set; }
 
-}
+    }
+    /// <summary>
+    /// Ruf data
+    /// </summary>
+    public class Ruf
+    {
+        [JsonProperty("domain")]
+        public string Domain { get; set; }
 
-public class ruf
-{
-    [JsonProperty("domain")]
-    public string domain { get; set; }
+        [JsonProperty("email")]
+        public string Email { get; set; }
 
-    [JsonProperty("email")]
-    public string email { get; set; }
+        [JsonProperty("valid")]
+        public bool Valid { get; set; }
 
-    [JsonProperty("valid")]
-    public bool valid { get; set; }
+    }
+    /// <summary>
+    /// Data data
+    /// </summary>
+    public class Data
+    {
+        [JsonProperty("dmarcHost")]
+        public string DmarcHost { get; set; }
 
-}
+        [JsonProperty("dmarc_record")]
+        public string Dmarcrecord { get; set; }
 
-public class data
-{
-    [JsonProperty("dmarcHost")]
-    public string dmarcHost { get; set; }
+        [JsonProperty("hasDmarc")]
+        public bool HasDmarc { get; set; }
 
-    [JsonProperty("dmarc_record")]
-    public string dmarcrecord { get; set; }
+        [JsonProperty("host")]
+        public string Host { get; set; }
 
-    [JsonProperty("hasDmarc")]
-    public bool hasDmarc { get; set; }
+        [JsonProperty("p")]
+        public string P { get; set; }
 
-    [JsonProperty("host")]
-    public string host { get; set; }
+        [JsonProperty("rua")]
+        public Rua Rua { get; set; }
 
-    [JsonProperty("p")]
-    public string p { get; set; }
+        [JsonProperty("ruf")]
+        public Ruf Ruf { get; set; }
 
-    [JsonProperty("rua")]
-    public rua rua { get; set; }
+        [JsonProperty("v")]
+        public string V { get; set; }
 
-    [JsonProperty("ruf")]
-    public ruf ruf { get; set; }
+        [JsonProperty("valid")]
+        public bool Valid { get; set; }
 
-    [JsonProperty("v")]
-    public string v { get; set; }
+    }
+    /// <summary>
+    /// API Response object
+    /// </summary>
+    public class ResponseObj
+    {
+        [JsonProperty("status")]
+        public string Status { get; set; }
 
-    [JsonProperty("valid")]
-    public bool valid { get; set; }
+        [JsonProperty("error")]
+        public object Error { get; set; }
 
-}
+        [JsonProperty("data")]
+        public Data Data { get; set; }
 
-public class ResponseObj
-{
-    [JsonProperty("status")]
-    public string status { get; set; }
-
-    [JsonProperty("error")]
-    public object error { get; set; }
-
-    [JsonProperty("data")]
-    public data data { get; set; }
-
-    [JsonProperty("code")]
-    public int code { get; set; }
-
-}
-
+    }
 }
